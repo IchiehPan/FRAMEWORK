@@ -1,0 +1,27 @@
+﻿<?xml version="1.0"?>
+
+<project name="EC_Customer" default="${client.jar}" basedir=".">
+
+	<!-- dir/file define -->
+	<property name="build.dir" value="bin/"/>
+	<property name="dist.dir" value="dist"/>
+	<property name="client.jar" value="pan-framework-base-0.0.1.jar"/>
+
+	<target name="prepare">
+		<mkdir dir="${dist.dir}"/>
+		<delete>
+			<fileset dir="${dist.dir}">
+				<include name="${dist.jar}"/>
+			</fileset>
+		</delete>
+	</target>
+	
+	<target name="${client.jar}" depends="prepare">
+		<jar jarfile="${dist.dir}/${client.jar}">
+			<fileset dir="${build.dir}" >		
+				<include name="com/pan/framework/**"/>
+			</fileset>
+		</jar>
+	</target>
+	
+</project>
