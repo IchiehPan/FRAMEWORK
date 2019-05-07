@@ -13,7 +13,6 @@ import org.jsoup.select.Elements;
 
 /**
  * @author panyijie
- *
  */
 public class JsoupKit {
 
@@ -23,12 +22,12 @@ public class JsoupKit {
 
     /**
      * 获取控件id的的text值列表
-     * 
-     * @param elementIds控件id集合
-     * @param searchTextArray包含searchText字符串的元素集
+     *
+     * @param elementIds      控件id集合
+     * @param searchTextArray 包含searchText字符串的元素集
      */
     public static List<String> getPageValueMap(Document doc, boolean needtitle, String[] elementIds,
-            String[] searchTextArray) throws Exception {
+                                               String[] searchTextArray) throws Exception {
         List<String> resultList = new ArrayList<>();
         if (needtitle) {
             String title = doc.title();// 获取标题
@@ -50,8 +49,8 @@ public class JsoupKit {
 
     /**
      * 接口调用
-     * 
-     * @param paramMap传递参数
+     *
+     * @param paramMap 传递参数
      */
     public static String getPageStr(String url, Map<String, Object> paramMap) {
         Document doc = null;
